@@ -122,11 +122,17 @@ Concatenates two string parameters.
 ## Project Structure
 
 ```
-json-rpc-example/
+json-rpc/
 ├── server.py          # JSON-RPC server implementation
 ├── client.py          # Client example with test calls
 ├── requirements.txt   # Python dependencies
 ├── README.md         # This file
+├── LICENSE           # MIT License
+├── tests/            # Test suite
+│   ├── __init__.py   # Test package initialization
+│   ├── conftest.py   # Pytest configuration and fixtures
+│   ├── test_server.py # Server functionality tests
+│   └── test_client.py # Client functionality tests
 └── .gitignore        # Git ignore rules
 ```
 
@@ -138,6 +144,49 @@ json-rpc-example/
 
 ## Testing
 
+### Running Tests
+
+The project includes comprehensive test suites for both server and client functionality. Tests are located in the `tests/` directory.
+
+#### Run All Tests
+```bash
+# Install pytest if not already installed
+pip install pytest
+
+# Run all tests
+pytest tests/
+
+# Run with verbose output
+pytest tests/ -v
+
+# Run specific test file
+pytest tests/test_server.py
+pytest tests/test_client.py
+```
+
+#### Test Coverage
+The test suite includes:
+
+- **Server Tests** (`test_server.py`):
+  - Method functionality testing (echo, add, foobar)
+  - Error handling (invalid methods, malformed JSON)
+  - Batch request processing
+  - Notification handling
+  - Request validation
+
+- **Client Tests** (`test_client.py`):
+  - Request structure validation
+  - Response handling
+  - Error scenarios
+  - JSON serialization
+  - Connection error handling
+
+- **Integration Tests**:
+  - End-to-end workflow testing
+  - Concurrent request handling
+  - Error recovery scenarios
+
+#### Manual Testing
 The client script includes basic tests that verify the server responses. Run the client to execute these tests:
 
 ```bash

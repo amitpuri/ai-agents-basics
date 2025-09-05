@@ -63,6 +63,7 @@ Simple JSON-RPC 2.0 implementation demonstrating:
 - **Example Methods**: Echo, add, and foobar RPC methods
 - **HTTP Transport**: Simple HTTP-based transport using Werkzeug
 - **Error Handling**: Comprehensive error handling and response validation
+- **Comprehensive Tests**: Full test suite with server, client, and integration tests
 
 ### `mcp/`
 Complete Model Context Protocol implementation featuring:
@@ -78,6 +79,7 @@ Agent-to-Agent communication protocol implementation including:
 - **Async Support**: Full asynchronous implementation using asyncio
 - **Batch Processing**: Concurrent task processing capabilities
 - **Interactive Testing**: Command-line interface for manual testing
+- **Comprehensive Tests**: Full test suite with async testing and mock fixtures
 
 ## How to Use
 
@@ -108,6 +110,18 @@ Agent-to-Agent communication protocol implementation including:
    python client.py
    ```
 
+5. **Run tests**:
+   ```bash
+   # Install pytest if not already installed
+   pip install pytest
+   
+   # Run all tests in a specific implementation
+   pytest tests/
+   
+   # Run with verbose output
+   pytest tests/ -v
+   ```
+
 ### Detailed Usage
 
 Each subdirectory contains comprehensive documentation with:
@@ -115,6 +129,7 @@ Each subdirectory contains comprehensive documentation with:
 - **Usage examples**
 - **API reference**
 - **Extension guidelines**
+- **Testing instructions**
 
 Refer to the individual README files in each directory for specific setup and usage instructions.
 
@@ -127,9 +142,9 @@ Refer to the individual README files in each directory for specific setup and us
 ### Dependencies
 Each implementation has its own specific requirements:
 
-- **MCP**: `aiohttp`, `aiohttp-cors`, `psutil`
-- **A2A Protocol**: `a2a-json-rpc`, `asyncio`
-- **JSON-RPC**: `werkzeug`, `requests`
+- **MCP**: `aiohttp`, `aiohttp-cors`, `psutil`, `pytest`
+- **A2A Protocol**: `a2a-json-rpc`, `asyncio`, `pytest`
+- **JSON-RPC**: `werkzeug`, `requests`, `pytest`
 
 See individual `requirements.txt` files in each subdirectory for complete dependency lists.
 
@@ -144,6 +159,7 @@ This repository serves as a comprehensive learning resource for understanding AI
 - **Educational Examples**: Well-documented implementations demonstrating best practices
 - **Multiple Protocols**: Coverage of MCP, A2A, and JSON-RPC communication patterns
 - **Production-Ready Code**: Robust implementations with comprehensive error handling
+- **Comprehensive Testing**: Full test suites for all implementations with unit, integration, and async tests
 - **Extensibility**: Easy-to-extend architectures for custom implementations
 
 Whether you're learning about AI agents, implementing agent communication systems, or building multi-agent applications, this repository provides the foundational knowledge and practical examples needed to get started.

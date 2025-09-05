@@ -8,6 +8,12 @@ This directory contains a complete implementation of an Agent-to-Agent communica
 - `client.py` - A2A JSON-RPC Client implementation  
 - `requirements.txt` - Python dependencies
 - `README.md` - This documentation file
+- `LICENSE` - MIT License
+- `tests/` - Comprehensive test suite
+  - `__init__.py` - Test package initialization
+  - `conftest.py` - Pytest configuration and fixtures
+  - `test_server.py` - Server functionality tests
+  - `test_client.py` - Client functionality tests
 
 ## Features
 
@@ -237,13 +243,68 @@ The current implementation simulates server responses for testing. To add real n
 3. Update the `handle_agent_request` function to work with real network requests
 
 
+## Testing
+
+### Running Tests
+
+The project includes comprehensive test suites for both server and client functionality. Tests are located in the `tests/` directory.
+
+#### Run All Tests
+```bash
+# Install pytest if not already installed
+pip install pytest
+
+# Run all tests
+pytest tests/
+
+# Run with verbose output
+pytest tests/ -v
+
+# Run specific test file
+pytest tests/test_server.py
+pytest tests/test_client.py
+```
+
+#### Test Coverage
+The test suite includes:
+
+- **Server Tests** (`test_server.py`):
+  - Agent method functionality (status, task processing, data analysis)
+  - Error handling (invalid methods, malformed JSON)
+  - Request validation and response formatting
+  - Async operation testing
+  - Concurrent request handling
+
+- **Client Tests** (`test_client.py`):
+  - Request structure validation
+  - Response handling and error scenarios
+  - Connection error handling
+  - Batch processing functionality
+  - JSON serialization testing
+
+- **Integration Tests**:
+  - End-to-end workflow testing
+  - Client-server communication
+  - Error recovery scenarios
+  - Performance testing with concurrent requests
+
+#### Test Fixtures
+The test suite includes comprehensive fixtures for:
+- Sample requests and expected responses
+- Mock HTTP responses and sessions
+- Test data for various scenarios
+- Async event loop management
+
 ## Dependencies
 
 - `a2a-json-rpc` - Core JSON-RPC protocol implementation
+- `aiohttp>=3.8.0` - Asynchronous HTTP client/server framework
+- `aiohttp-cors>=0.7.0` - CORS support for aiohttp
 - `asyncio` - Asynchronous programming support (built-in)
 - `json` - JSON handling (built-in)
 - `logging` - Logging support (built-in)
 - `typing` - Type hints (built-in)
+- `pytest` - Testing framework (for running tests)
 
 ## License
 

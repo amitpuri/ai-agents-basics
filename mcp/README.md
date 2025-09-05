@@ -8,6 +8,12 @@ This directory contains a complete implementation of the Model Context Protocol 
 - `client.py` - MCP Client implementation for tool invocation and resource access
 - `requirements.txt` - Python dependencies
 - `README.md` - This documentation file
+- `LICENSE` - MIT License
+- `tests/` - Comprehensive test suite
+  - `__init__.py` - Test package initialization
+  - `conftest.py` - Pytest configuration and fixtures
+  - `test_server.py` - Server functionality tests
+  - `test_client.py` - Client functionality tests
 
 ## Features
 
@@ -436,11 +442,67 @@ The current implementation uses HTTP for transport. To add other transport metho
 - **Error Information**: Error messages don't expose sensitive system information
 
 
+## Testing
+
+### Running Tests
+
+The project includes comprehensive test suites for both server and client functionality. Tests are located in the `tests/` directory.
+
+#### Run All Tests
+```bash
+# Install pytest if not already installed
+pip install pytest
+
+# Run all tests
+pytest tests/
+
+# Run with verbose output
+pytest tests/ -v
+
+# Run specific test file
+pytest tests/test_server.py
+pytest tests/test_client.py
+```
+
+#### Test Coverage
+The test suite includes:
+
+- **Server Tests** (`test_server.py`):
+  - MCP protocol compliance testing
+  - Tool registration and invocation
+  - Resource management and access
+  - Error handling (invalid methods, tools, resources)
+  - Async operation testing
+  - Tool handler functionality (weather, math, system info, file search)
+
+- **Client Tests** (`test_client.py`):
+  - Request structure validation
+  - Response handling and error scenarios
+  - Connection error handling
+  - Tool invocation and resource access
+  - Batch operations testing
+  - JSON serialization testing
+
+- **Integration Tests**:
+  - End-to-end workflow testing
+  - Client-server communication
+  - Tool and resource lifecycle testing
+  - Error recovery scenarios
+
+#### Test Fixtures
+The test suite includes comprehensive fixtures for:
+- Sample MCP requests and responses
+- Mock HTTP responses and sessions
+- Test tools and resources
+- Sample data for various scenarios
+- Async event loop management
+
 ## Dependencies
 
 - `aiohttp>=3.8.0` - Asynchronous HTTP client/server framework
 - `aiohttp-cors>=0.7.0` - CORS support for aiohttp
 - `psutil>=5.9.0` - System and process utilities
+- `pytest` - Testing framework (for running tests)
 
 ## Model Context Protocol Specification
 
