@@ -1,0 +1,3 @@
+a2a-json-rpc
+aiohttp>=3.8.0
+aiohttp-cors>=0.7.0

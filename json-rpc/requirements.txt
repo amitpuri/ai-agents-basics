@@ -1,0 +1,3 @@
+json-rpc # https://json-rpc.readthedocs.io/
+requests # https://requests.readthedocs.io/
+werkzeug # https://werkzeug.palletsprojects.com/
