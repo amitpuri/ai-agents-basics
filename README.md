@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/amitpuri-ai-agents-basics-badge.png)](https://mseep.ai/app/amitpuri-ai-agents-basics)
+
 ![AI Generated](https://img.shields.io/badge/AI-Generated-blueviolet?style=for-the-badge&logo=openai&logoColor=white)
 
 # OpenAGI Codes AI Agents Basics
